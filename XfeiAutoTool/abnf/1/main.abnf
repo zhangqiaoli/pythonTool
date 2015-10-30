@@ -1,0 +1,7 @@
+#ABNF 1.0 UTF-8;
+business weather;
+root main;
+#ABNF HEAD-END;
+$want = 要 | 想 | 想要;
+$where = 厕所|洗手间|卫生间;
+$main{biz:q111} = [我] [$want] 去 $where;

@@ -1,0 +1,1 @@
+http://xxxx:8888/setpage?cmd={"msgid":"seturi","body":{"uri":"file:///E:/PythonCode/ExchangeDemo/websocketB.html"}}

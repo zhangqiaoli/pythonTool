@@ -1,0 +1,36 @@
+{
+    "source": "ftp://172.16.3.196/test/movie", 
+    "list": [
+        {
+            "extend": {
+                "length": "90分钟", 
+                "screenshot": [
+                    "电影1/hello.jpg", 
+                    "电影1/hello1.jpg"
+                ]
+            }, 
+            "title": "电影1", 
+            "poster": "电影1/hello.jpg", 
+            "filetime": "2014-01-01 00:00:00", 
+            "introduce": "身怀绝技的弯刀在追查犯罪组织卡特尔的行动中，其女友兼搭档ICE特工莎塔娜不慎遇害，弯刀也被作为杀人凶手判处绞刑。", 
+            "id": "cbaa5f00-22db-11e4-8da9-005056c00008", 
+            "filesize": 0, 
+            "file": "电影1/hello.avi", 
+            "thumbnail": "电影1/hello_small.jpg"
+        }, 
+        {
+            "extend": {
+                "length": "90分钟"
+            }, 
+            "title": "电影2", 
+            "poster": "电影2/hello.jpg", 
+            "filetime": "2014-01-01 00:00:00", 
+            "introduce": "身怀绝技的弯刀在追查犯罪组织卡特尔的行动中，其女友兼搭档ICE特工莎塔娜不慎遇害，弯刀也被作为杀人凶手判处绞刑。", 
+            "id": "cc0f1440-22db-11e4-8dd0-005056c00008", 
+            "filesize": 0, 
+            "file": "电影2/hello.avi", 
+            "thumbnail": "电影2/hello_small.jpg"
+        }
+    ], 
+    "update": "2014-08-13 19:20:13"
+}

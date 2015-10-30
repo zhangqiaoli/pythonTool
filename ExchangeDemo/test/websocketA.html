@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>WebSocket A</title>
+<script src="js/jquery.js"></script>
+<script language="javascript"type="text/javascript">
+    var output;
+    function init() {
+        output = document.getElementById("output");
+        testWebSocket();
+    }
+    function testWebSocket() {
+        websocket = new WebSocket("ws://172.16.5.16:8888/ws");
+        websocket.onopen = function(evt) {
+            onOpen(evt)
+        };
+        websocket.onclose = function(evt) {
+            onClose(evt)
+        };
+        websocket.onmessage = function(evt) {
+            onMessage(evt)
+        };
+        websocket.onerror = function(evt) {
+            onError(evt)
+        };
+    }
+    function onOpen(evt) {
+        writeToScreen("CONNECTED");
+    }
+    function onClose(evt) {
+        writeToScreen("DISCONNECTED");
+    }
+    function onMessage(evt) {
+        writeToScreen('<span style="color: blue;">RESPONSE: '+ evt.data+'</span>');
+		var obj = eval('('+ evt.data+')');
+		if (obj.msgid == 'setpage')
+		{
+			var uri = obj.uri
+			if ( uri != window.location.href )
+			{
+				window.location.href = uri;
+			}
+		}
+
+    }
+    function onError(evt) {
+        writeToScreen('<span style="color: red;">ERROR:</span> '+ evt.data);
+    }
+    function doSend(message) {
+        writeToScreen("SENT: " + message);
+        websocket.send(message);
+    }
+    function writeToScreen(message) {
+        var pre = document.createElement("p");
+        pre.style.wordWrap = "break-word";
+        pre.innerHTML = message;
+        output.appendChild(pre);
+    }
+    window.addEventListener("load", init, false);
+	function echo(){
+		var msg = document.getElementById("message").value
+		doSend(msg);
+	}
+</script>
+<h2>WebSocket A</h2>
+<body>
+     <form>
+         <h1>WebSocket A</h1>
+         <input type="text" id="message">
+         <input type="button" onclick="echo()" value="提交">
+     </form>
+</body>
+<div id="output"></div>
+</html>

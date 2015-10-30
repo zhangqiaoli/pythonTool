@@ -1,0 +1,114 @@
+#!/bin/sh
+#
+# alwayson Start/Stop the always on daemon
+#
+# chkconfig: - 88 10
+# description: Extensible, configurable, high performance server.
+
+### BEGIN INIT INFO
+# Provides: alwayson
+# Required-Start: 
+# Required-Stop:
+# Default-Start:
+# Default-Stop:
+# Should-Start:
+# Should-Stop:
+# Short-Description: always on server
+# Description: Extensible, configurable, high performance server.
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+prog=alwayson.py
+basedir=/smartac/alwayson
+[ -e /etc/sysconfig/$prog ] && . /etc/sysconfig/$prog
+
+exec=$basedir/$prog
+config_dir=${config_dir:=$basedir}
+config=${config:=$config_dir/alwayson.conf}
+pidfile=${pidfile:=$basedir/$prog.pid}
+lockfile=$basedir/$prog.lck
+
+start() {
+    echo -n $"Starting $prog: "
+    python $exec start
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && touch $lockfile
+    return $retval
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc -p $pidfile $prog
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && rm -f $lockfile
+    return $retval
+}
+
+restart() {
+    stop
+    start
+}
+
+reload() {
+    # radiusd may not be capable of a 100% configuration reload depending
+    # on which loadable modules are in use, if sending the server a
+    # HUP is not sufficient then use restart here instead. However, we
+    # prefer by default to use HUP since it's what is usually desired.
+    #    
+    # restart
+
+    kill -HUP `pidofproc -p $pidfile $prog`
+}
+
+force_reload() {
+    restart
+}
+
+rh_status() {
+    # run checks to determine if the service is running or use generic status
+    status -p $pidfile $prog && python $exec status
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        $1
+        ;;
+    stop)
+        rh_status_q || exit 0
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    force-reload)
+        force_reload
+        ;;
+    status)
+        rh_status
+        ;;
+    condrestart|try-restart)
+        rh_status_q || exit 0
+        restart
+        ;;
+    run)
+	python $exec run
+	;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|run}"
+        exit 2
+esac
+exit $?

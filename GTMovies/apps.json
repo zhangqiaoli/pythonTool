@@ -1,0 +1,32 @@
+{
+    "source": "ftp://172.16.3.196/test/APPtest", 
+    "list": [
+        {
+            "extend": {
+                "length": "90分钟"
+            }, 
+            "title": "微信", 
+            "poster": "微信/hello.jpg", 
+            "filetime": "2014-01-01 00:00:00", 
+            "introduce": "we can talk with it", 
+            "id": "5b44b740-2139-11e4-a499-005056c00008", 
+            "filesize": 0, 
+            "file": "微信/hello.apk", 
+            "thumbnail": "微信/hello_small.jpg"
+        }, 
+        {
+            "extend": {
+                "length": "90分钟"
+            }, 
+            "title": "游戏", 
+            "poster": "游戏/hello.jpg", 
+            "filetime": "2014-01-01 00:00:00", 
+            "introduce": "we can play games with it", 
+            "id": "5ba96c80-2139-11e4-9afb-005056c00008", 
+            "filesize": 0, 
+            "file": "游戏/hello.apk", 
+            "thumbnail": "游戏/hello_small.jpg"
+        }
+    ], 
+    "update": "2014-08-11 17:24:54"
+}

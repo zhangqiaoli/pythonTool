@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+# http://www.netscape.com/newsref/std/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+auth.voicecloud.cn	FALSE	/	FALSE		PHPSESSID	58jlpsdl5q64qskkgel5519kc0
+www.xfyun.cn	FALSE	/	FALSE		PHPSESSID	igi1e6laramjjjg6trii3chcq6

@@ -1,0 +1,23 @@
+<CRMInfo Mac="AABBCCDDEEFF" UserID="13812345678" IsVip="0"> 
+  <VipWiFiLoginResult> 
+    <header> 
+      <responsecode>0</responsecode>  
+      <responsemessage/>  
+      <pagerecords>0</pagerecords>  
+      <pageno>0</pageno>  
+      <updatecount>0</updatecount>  
+      <maxrecords>0</maxrecords>  
+      <maxpageno>0</maxpageno>  
+      <messagetype/>  
+      <messageid/>  
+      <version/> 
+    </header>  
+    <vip> 
+      <vipcode>123456</vipcode>  
+      <name>ÐÂÒ»°Ù</name>  
+      <gender>M</gender>  
+      <vipid>421683199011285532</vipid>  
+      <telephone>13814584627</telephone> 
+    </vip> 
+  </VipWiFiLoginResult> 
+</CRMInfo>

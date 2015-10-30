@@ -1,0 +1,9 @@
+# Netscape HTTP Cookie File
+# http://www.netscape.com/newsref/std/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+auth.voicecloud.cn	FALSE	/	FALSE	1448444513	account_id	empty
+auth.voicecloud.cn	FALSE	/	FALSE	1448444513	token	13fe2c0a-c647-4e14-aa88-de223ca68e25
+www.xfyun.cn	FALSE	/	FALSE		PHPSESSID	q6mea1lgac03fcuo35cqkvoad0
+www.xfyun.cn	FALSE	/	FALSE	1477388514	account_id	empty
+www.xfyun.cn	FALSE	/	FALSE	1477388514	token	13fe2c0a-c647-4e14-aa88-de223ca68e25
